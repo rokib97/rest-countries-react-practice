@@ -10,7 +10,9 @@ const CountryDetails = () => {
   useEffect(() => {
     fetch(`https://restcountries.com/v3.1/name/${countryName}`)
       .then((res) => res.json())
-      .then((data) => setCountry(data[0]));
+      .then((data) => {
+        setCountry(data[0]);
+      });
   }, [countryName]);
   return (
     <div className="mt-5 ">
